@@ -7,7 +7,7 @@ class NationInfo {
 	private String capital;
 
 	public NationInfo(String country, String capital) {
-		this.setCountry(country);
+		this.country = country;
 		this.capital = capital;
 	}
 
@@ -23,13 +23,6 @@ class NationInfo {
 		return capital;
 	}
 
-	public void setCapital(String capital) {
-		this.capital = capital;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
 }
 
 public class ninth_practice {
