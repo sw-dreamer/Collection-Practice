@@ -3,16 +3,32 @@ package collection_package;
 import java.util.*;
 
 class NationInfo {
-	String country;
-	String capital;
+	private String country;
+	private String capital;
 
 	public NationInfo(String country, String capital) {
-		this.country = country;
+		this.setCountry(country);
 		this.capital = capital;
 	}
 
 	public void printNationInfo() {
-		System.out.println("│" + country + '\t' + capital);
+		System.out.println("│" + getCountry() + '\t' + capital);
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public String getCapital() {
+		return capital;
+	}
+
+	public void setCapital(String capital) {
+		this.capital = capital;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 }
 
@@ -53,11 +69,11 @@ public class ninth_practice {
 						int captial_count = 0;
 						int country_count = 0;
 						for (NationInfo nation : nations) {
-							if (nation.country.length() > country_count) {
-								country_count = nation.country.length();
+							if (nation.getCountry().length() > country_count) {
+								country_count = nation.getCountry().length();
 							}
-							if (nation.capital.length() > captial_count) {
-								captial_count = nation.capital.length();
+							if (nation.getCapital().length() > captial_count) {
+								captial_count = nation.getCapital().length();
 							}
 						}
 						System.out.println("====================================");
@@ -99,14 +115,14 @@ public class ninth_practice {
 					boolean country_exists = false;
 					boolean capital_exists = false;
 					for (NationInfo nation : nations) {
-						if (nation.country.equals(country)) {
+						if (nation.getCountry().equals(country)) {
 							country_exists = true;
 							System.out.println(country + "는 이미 있습니다!");
 							break;
 						}
 					}
 					for (NationInfo nation : nations) {
-						if (nation.capital.equals(capital)) {
+						if (nation.getCapital().equals(capital)) {
 							capital_exists = true;
 							System.out.println(capital + "는 이미 있습니다!");
 							break;
@@ -126,13 +142,13 @@ public class ninth_practice {
 						System.out.println("퀴즈를 종료하고 싶으면 '그만'을 입력하세요.");
 
 						NationInfo randomNation = nations.get(random_quiz.nextInt(nations.size()));
-						System.out.println(randomNation.country + "의 수도는?");
+						System.out.println(randomNation.getCountry() + "의 수도는?");
 						String input_answer = scanner.nextLine();
 						if (input_answer.equals("그만")) {
 							break;
 						}
 
-						if (input_answer.equals(randomNation.capital)) {
+						if (input_answer.equals(randomNation.getCapital())) {
 							System.out.println("정답!!");
 						} else {
 							System.out.println("아닙니다!!");
