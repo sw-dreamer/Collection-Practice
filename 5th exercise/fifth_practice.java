@@ -81,7 +81,7 @@ public class fifth_practice {
 						System.out.print("학점 평균: ");
 						try {
 							student_score = Double.parseDouble(scanner.next());
-							if (student_score < 0 || student_score > 4) {
+							if (student_score < 0 || student_score > 4.5) {
 								System.out.println("점수를 잘못 입력하였습니다. 다시 입력하세요.");
 							} else {
 								break;
