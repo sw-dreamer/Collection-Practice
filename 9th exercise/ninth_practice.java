@@ -25,6 +25,20 @@ class NationInfo {
 
 }
 
+/**
+ * @packageName	: collection_package
+ * @fileName	: ninth_practice.java
+ * @author		: TJ
+ * @date		: 2024.12.11
+ * @description	: 나라와 수도 맞추기 게임의 실행 예시는 다음과 같다.
+ * 				  나라 이름(country)과 수도(capital)로 구성된 Nation 클래스를 작성하고 Vector 컬렉션을 이용하여 프로그램을 작성하라.
+
+ * ========================================================================================
+ * DATE						AUTHOR				NOTE
+ * ----------------------------------------------------------------------------------------
+ * 2024.12.11				SW WOO				최초 생성
+ * 
+ */
 public class ninth_practice {
 
 	public static void main(String[] args) {
