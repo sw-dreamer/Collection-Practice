@@ -18,6 +18,20 @@ class Location {
 	}
 }
 
+/**
+ * @packageName	: collection_package
+ * @fileName	: sixth_practice.java
+ * @author		: TJ
+ * @date		: 2024.12.11
+ * @description	: 도시 이름, 위도, 경도 정보를 가진 Location 클래스를 작성하고,
+ * 				  도시 이름을 '키'로 하는 HashMap<String, Location> 컬렉션을 만들고,
+ * 				  사용자로부터 입력 받아 4개의 도시를 저장하라. 그리고 도시 이름으로 검색하는 프로그램을 작성하라.
+ * ========================================================================================
+ * DATE						AUTHOR				NOTE
+ * ----------------------------------------------------------------------------------------
+ * 2024.12.11				SW WOO				최초 생성
+ * 
+ */
 public class sixth_practice {
 
 	public static void main(String[] args) {
