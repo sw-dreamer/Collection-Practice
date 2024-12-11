@@ -11,8 +11,8 @@ class StudentInfo {
 	public StudentInfo(String student_name, String department_information, int student_number, double student_score) {
 		this.student_name = student_name;
 		this.department_information = department_information;
-		this.setStudent_number(student_number);
-		this.setStudent_score(student_score);
+		this.student_number = student_number;
+		this.student_score = student_score;
 	}
 
 	public void printStudentInfo() {
@@ -24,17 +24,10 @@ class StudentInfo {
 		return student_number;
 	}
 
-	public void setStudent_number(int student_number) {
-		this.student_number = student_number;
-	}
-
 	public double getStudent_score() {
 		return student_score;
 	}
 
-	public void setStudent_score(double student_score) {
-		this.student_score = student_score;
-	}
 }
 
 public class fifth_practice {
@@ -103,7 +96,8 @@ public class fifth_practice {
 
 					scanner.nextLine();
 
-					insert_student.add(new StudentInfo(student_name, department_information, student_number, student_score));
+					insert_student
+							.add(new StudentInfo(student_name, department_information, student_number, student_score));
 
 				}
 				break;
