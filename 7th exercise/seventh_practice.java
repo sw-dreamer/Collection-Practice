@@ -2,6 +2,18 @@ package collection_package;
 
 import java.util.*;
 
+/**
+ * @packageName	: collection_package
+ * @fileName	: seventh_practice.java
+ * @author		: TJ
+ * @date		: 2024.12.11
+ * @description	: 이름과 학점(4.5만점)을 5개 입력받아 해시맵에 저장하고, 장학생 선발 기준을 입력 받아 장학생 명단을 출력하라.
+ * ========================================================================================
+ * DATE						AUTHOR				NOTE
+ * ----------------------------------------------------------------------------------------
+ * 2024.12.11				SW WOO				최초 생성
+ * 
+ */
 public class seventh_practice {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
