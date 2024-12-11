@@ -1,6 +1,18 @@
 package collection_package;
-import java.util.Vector;
-import java.util.Scanner;
+import java.util.*;
+
+/**
+ * @packageName	: collection_package
+ * @fileName	: first_practice.java
+ * @author		: TJ
+ * @date		: 2024.12.11
+ * @description	: Scanner 클래스로 -1이 입력될 때까지 양의 정수를 입력받아 벡터에 저장하고 벡터를 검색하여 가장 큰 수를 출력하는 프로그램을 작성하라.
+ * ========================================================================================
+ * DATE					AUTHOR				NOTE
+ * ----------------------------------------------------------------------------------------
+ * 2024.12.11				SW WOO				최초 생성
+ * 
+ */
 public class first_practice {
 
 	public static void main(String[] args) {
