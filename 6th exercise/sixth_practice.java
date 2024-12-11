@@ -4,10 +4,10 @@ import java.util.*;
 
 class Location {
 	private String cityName;
-	private double longitude; // 경도
-	private double latitude; // 위도
+	private int longitude; // 경도
+	private int latitude; // 위도
 
-	public Location(String cityName, double latitude, double longitude) {
+	public Location(String cityName, int latitude, int longitude) {
 		this.cityName = cityName;
 		this.longitude = longitude;
 		this.latitude = latitude;
