@@ -2,13 +2,13 @@ package collection_package;
 
 import java.util.*;
 
-class StudentInfo {
+class Student_Info {
 	private String student_name;
 	private String department_information;
 	private int student_number;
 	private double student_score;
 
-	public StudentInfo(String student_name, String department_information, int student_number, double student_score) {
+	public Student_Info(String student_name, String department_information, int student_number, double student_score) {
 		this.student_name = student_name;
 		this.department_information = department_information;
 		this.student_number = student_number;
@@ -24,6 +24,22 @@ class StudentInfo {
 		return student_number;
 	}
 
+	public String getStudent_name() {
+		return student_name;
+	}
+
+	public void setStudent_name(String student_name) {
+		this.student_name = student_name;
+	}
+
+	public void setStudent_number(int student_number) {
+		this.student_number = student_number;
+	}
+
+	public void setStudent_score(double student_score) {
+		this.student_score = student_score;
+	}
+
 	public double getStudent_score() {
 		return student_score;
 	}
@@ -31,91 +47,58 @@ class StudentInfo {
 }
 
 /**
- * @packageName	: collection_package
- * @fileName	: fifth_practice.java
- * @author		: TJ
- * @date		: 2024.12.11
- * @description	: 하나의 학생 정보를 나타내는 Student 클래스에는 이름, 학과, 학번, 학점 평균을 저장하는 필드가 있다.
-		  학생마다 Student 객체를 생성하고 4명의 학생 정보를 ArrayList 컬렉션에 저장한 후에, ArrayList의 모든 학생(4명) 정보를 출력하고
-		  학생 이름을 입력받아 해당 학생의 학점 평균을 출력하는 프로그램을 작성하라.
-
- * ========================================================================================
- * DATE					AUTHOR				NOTE
- * ----------------------------------------------------------------------------------------
- * 2024.12.11				SW WOO				최초 생성
+ * @packageName : collection_package
+ * @fileName : fifth_practice.java
+ * @author : TJ
+ * @date : 2024.12.11
+ * @description : 하나의 학생 정보를 나타내는 Student 클래스에는 이름, 학과, 학번, 학점 평균을 저장하는 필드가 있다.
+ *              학생마다 Student 객체를 생성하고 4명의 학생 정보를 ArrayList 컬렉션에 저장한 후에,
+ *              ArrayList의 모든 학생(4명) 정보를 출력하고 학생 이름을 입력받아 해당 학생의 학점 평균을 출력하는
+ *              프로그램을 작성하라.
+ * 
+ *              ========================================================================================
+ *              DATE AUTHOR NOTE
+ *              ----------------------------------------------------------------------------------------
+ *              2024.12.11 SW WOO 최초 생성
  * 
  */
-public class fifth_practice {
+public class fifthSecond {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		ArrayList<StudentInfo> insert_student = new ArrayList<>();
+		ArrayList<Student_Info> insert_student = new ArrayList<>();
 		int number = 0;
+		String input = null;
+		String[] input_split;
+		String name;
+		String major;
+		int studentNo;
+		double score;
 		while (true) {
 			System.out.print("입력 받고 싶은 인원의 수는 몇명인가요? ");
 			try {
 				number = scanner.nextInt();
 				scanner.nextLine();
-
-				for (int i = 0; i < number; i++) {
-					boolean isduplicated = false;
-					System.out.println("학생 " + (i + 1) + "의 정보를 입력하세요:");
-
-					System.out.print("이름: ");
-					String student_name = scanner.nextLine();
-
-					System.out.print("학과: ");
-					String department_information = scanner.nextLine();
-
-					int student_number = 0;
-					while (true) {
-						System.out.print("학번: ");
-						try {
-							student_number = Integer.parseInt(scanner.next());
-							isduplicated = false;
-							for (StudentInfo student : insert_student) {
-								if (student.getStudent_number() == student_number) {
-									isduplicated = true;
-									System.out.println("이미 존재하는 학번입니다. 다른 학번을 입력해주세요.");
-									break;
-								}
-							}
-							if (isduplicated == false) {
-								break;
-							}
-						} catch (NumberFormatException e) {
-							System.out.println("숫자로 입력하세요");
-						}
-
-					}
-					scanner.nextLine();
-
-					double student_score = 0;
-					while (true) {
-						System.out.print("학점 평균: ");
-						try {
-							student_score = Double.parseDouble(scanner.next());
-							if (student_score < 0 || student_score > 4.5) {
-								System.out.println("점수를 잘못 입력하였습니다. 다시 입력하세요.");
-							} else {
-								break;
-							}
-						}
-
-						catch (NumberFormatException e) {
-							System.out.println("숫자를 입력하세요");
-							scanner.nextLine();
+				if (number <= 0) {
+					System.out.println("학생 수는 1명 이상이어야 합니다.");
+					continue;
+				} else {
+					for (int i = 0; i < number; i++) {
+						System.out.println("정보를 입력하세요");
+						input = scanner.nextLine();
+						input_split = input.split(",");
+						if (input_split.length == 4) {
+							name = input_split[0].trim();
+							major = input_split[1].trim();
+							studentNo = Integer.parseInt(input_split[2].trim());
+							score = Double.parseDouble(input_split[3].trim());
+							insert_student.add(new Student_Info(name, major, studentNo, score));
 						}
 					}
-
-					scanner.nextLine();
-
-					insert_student
-							.add(new StudentInfo(student_name, department_information, student_number, student_score));
-
+					break;
 				}
-				break;
+
 			} catch (InputMismatchException e) {
 				System.out.println("숫자를 입력하세요");
 				scanner.next();
@@ -124,18 +107,32 @@ public class fifth_practice {
 		}
 
 		System.out.println("입력된 학생 정보:");
-		for (StudentInfo student : insert_student) {
+		for (Student_Info student : insert_student) {
 			student.printStudentInfo();
 		}
 
 		double sum = 0.0;
 		double result = 0.0;
-		for (StudentInfo student : insert_student) {
+		for (Student_Info student : insert_student) {
 			sum += student.getStudent_score();
 		}
 		result = sum / number;
 		System.out.println("입력된 학생들의 학점 합은 " + sum + "이고 입력된 학생들의 학접 평균은 " + result + "입니다");
 
+		System.out.print("찾고자 하는 학생을 입력 하세요 > ");
+		String find_name = scanner.next();
+		boolean found = false;
+		for (Student_Info student : insert_student) {
+			if (student.getStudent_name().equalsIgnoreCase(find_name)) {
+				System.out.println(find_name + "의 학점 평균은 " + student.getStudent_score() + "입니다.");
+				found = true;
+				break;
+			}
+		}
+
+		if (!found) {
+			System.out.println("학생을 찾을 수 없습니다.");
+		}
 		scanner.close();
 	}
 }
